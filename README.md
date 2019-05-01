@@ -50,8 +50,8 @@ First create a repository on docker hub called netcat
 3. **Network two containers together (Note this will requires 3 terminal windows. The actual docker commands are run on your host, not the container instance.)**
 * `docker run --name netcat2 -ti briansimoni/netcat:LATEST bash`
 * `docker network create netcat`
-* `docker network add netcat`
-* `docker network add netcat netcat2`
+* `docker network connect netcat netcat`
+* `docker network connect netcat netcat2`
 * *Inside the netcat2 container*
 * `netcat -l -p 4321`
 * *Inside the first netcat container*
