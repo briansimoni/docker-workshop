@@ -1,0 +1,14 @@
+extends:
+    - airbnb-base
+env:
+    mocha: true
+rules:
+    indent: ['error', 4,
+        {
+            'FunctionDeclaration': {'parameters': 'first'},
+            'FunctionExpression': {'parameters': 'first'}
+        }
+    ]
+    multiline-comment-style: ['error', 'separate-lines']
+
+    import/no-extraneous-dependencies: ["error", {"devDependencies": ["*.js"]}]

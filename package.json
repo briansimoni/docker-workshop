@@ -1,0 +1,28 @@
+{
+  "name": "hapi-stack-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^7.0.0",
+    "dynamoose": "^1.7.2",
+    "hapi": "^18.1.0",
+    "mysql2": "^1.6.5",
+    "sequelize": "^5.7.1",
+    "sinon": "^7.3.2"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.17.2",
+    "mocha": "^6.1.4",
+    "nodemon": "^1.18.11"
+  }
+}
