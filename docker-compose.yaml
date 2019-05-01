@@ -1,0 +1,51 @@
+version: "3"
+
+services:
+  app:
+    image: node:10.15.3-alpine
+    working_dir: /app
+    ports: 
+      - "8080:8080" # http listener
+      - "9229:9229" # node debugger
+    volumes:
+      - ".:/app"
+    depends_on: 
+      - mysql
+      - dynamo
+    # use nodemon for auto-reloading on changes. the --legacy-watch supports Windows users
+    command: node node_modules/nodemon/bin/nodemon.js --legacy-watch --inspect=0.0.0.0 src/server.js
+
+  mysql:
+    image: mysql:8
+    restart: always
+    ports:
+      - "3306:3306"
+    environment: 
+      MYSQL_ROOT_PASSWORD: development
+      MYSQL_DATABASE: pets
+    command: --default-authentication-plugin=mysql_native_password
+
+  # A very basic gui provided for the mysql instance
+  # Simply visit http://localhost:8888
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8888:8080
+
+  dynamo:
+    container_name: dynamo
+    image: amazon/dynamodb-local
+    depends_on:
+      - mysql
+    ports:
+      - "8000:8000"
+
+  dynamo_admin:
+    image: aaronshaf/dynamodb-admin
+    ports:
+      - "8001:8001"
+    depends_on: 
+      - dynamo
+    environment:
+      DYNAMO_ENDPOINT: http://dynamo:8000
