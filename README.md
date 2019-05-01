@@ -88,3 +88,6 @@ We are going to provide the external dependencies that the node.js requires via 
 * https://www.youtube.com/watch?v=cYsVvV1aVss
 * https://www.youtube.com/watch?v=4ht22ReBjno
 
+# Security Considerations
+Sure, Docker containers are running in an isolated process, but really how isolated are they? I mean, most of your containers are running the process as root. Can we reduce the privlege somehow? Are there other security best practices out there? Maybe look into [seccomp](https://docs.docker.com/engine/security/seccomp/). Look into Alpine Linux.
+
