@@ -80,6 +80,8 @@ We are going to provide the external dependencies that the node.js requires via 
 * `docker stats`
 * `docker inspect`
 * `docker --help`
+* `docker logs -f [container_name]`
+* `docker exec -ti [container_name] sh`
 
 # Useful Links
 * https://docs.docker.com/engine/docker-overview/
