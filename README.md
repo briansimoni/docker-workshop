@@ -32,7 +32,7 @@ If you remember, containers are Linux processes. They spawn and die all the time
 
 
 # Lab
-First we are going to start with the basics of running containers and networking them together.
+**First we are going to start with the basics of running containers and networking them together.**
 1. Install netcat on a debian container
 * `docker run --name netcat -ti debian bash`
 * `apt-get update -y && apt install netcat -y`
@@ -47,7 +47,7 @@ First create a repository on docker hub called netcat
 * `docker push briansimoni/netcat:LATEST`
 * Great! Now you can reuse your netcat image and share it with everyone
 
-3. Network two containers together (Note this will requires 3 terminal windows. The actual docker commands are run on your host, not the container instance.)
+3. **Network two containers together (Note this will requires 3 terminal windows. The actual docker commands are run on your host, not the container instance.)**
 * `docker run --name netcat2 -ti briansimoni/netcat:LATEST bash`
 * `docker network create netcat`
 * `docker network add netcat`
@@ -59,15 +59,17 @@ First create a repository on docker hub called netcat
 * Now you can send messages to the other container!
 * Netcat is a useful network debugging tool
 
-4. Volumes with nginx
+4. **Volumes with nginx**
 * `mkdir docker-volumes`
 * `cd docker-volumes`
 * `docker run --volume ${PWD}:/usr/share/nginx/html --name nginx -p 7000:80 -d nginx`
 * Now modify index.html and visit http://localhost:7000
 
-5. Dockerfiles
+5. **Dockerfiles**
+We are going to Dockerize the Node.js application in this repository
 
-6. Docker Compose
+6. **Docker Compose**
+We are going to provide the external dependencies that the node.js requires via docker-compose
 
 # Useful Commands
 * `docker container prune`
