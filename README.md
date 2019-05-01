@@ -59,8 +59,30 @@ First create a repository on docker hub called netcat
 * Now you can send messages to the other container!
 * Netcat is a useful network debugging tool
 
-4. Dockerfiles
+4. Volumes with nginx
+* `mkdir docker-volumes`
+* `cd docker-volumes`
+* `docker run --volume ${PWD}:/usr/share/nginx/html --name nginx -p 7000:80 -d nginx`
+* Now modify index.html and visit http://localhost:7000
 
-5. Docker Compose
+5. Dockerfiles
 
+6. Docker Compose
+
+# Useful Commands
+* `docker container prune`
+* `docker volume prune`
+* `docker image prune`
+* `docker ps -a`
+* `docker rm -f [container_name|container_id]`
+* `docker stats`
+* `docker inspect`
+* `docker --help`
+
+# Useful Links
+* https://docs.docker.com/engine/docker-overview/
+* https://www.slideshare.net/jpetazzo/anatomy-of-a-container-namespaces-cgroups-some-filesystem-magic-linuxcon
+* https://docs.aws.amazon.com/AmazonECS/latest/developerguide/docker-basics.html#install_docker
+* https://www.youtube.com/watch?v=cYsVvV1aVss
+* https://www.youtube.com/watch?v=4ht22ReBjno
 
