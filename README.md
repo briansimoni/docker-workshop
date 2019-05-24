@@ -71,6 +71,8 @@ We are going to Dockerize the Node.js application in this repository
 6. **Docker Compose**
 We are going to provide the external dependencies that the node.js requires via docker-compose
 
+The answers to 5 and 6 can be found in the completed branch: https://github.com/briansimoni/docker-workshop/tree/completed
+
 # Useful Commands
 * `docker container prune`
 * `docker volume prune`
