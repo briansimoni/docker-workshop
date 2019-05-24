@@ -28,7 +28,7 @@ It may be useful to know that when you run Docker, you are running the docker da
 When you run containers, Docker makes them think they are running on their own private network. It does so by manipulating [iptables](https://linux.die.net/man/8/iptables) and DNS through the hosts file. You can control the docker private networking using the CLI.
 
 ## Volumes
-If you remember, containers are Linux processes. They spawn and die all the time. While the daemon can persist them or leave them in a stopped state, always think of containers as ephemeral. The way you should be persisting data is through volumes. Volumes provide a way for you to link a part of your host's filesystem to one ore many containers. Think of how Microsoft Word runs in its own process. The contents of memory are destroyed when you power off the machine unless you save it to the file system. 
+If you remember, containers are Linux processes. They spawn and die all the time. While the daemon can persist them or leave them in a stopped state, always think of containers as ephemeral. The way you should be persisting data is through volumes. Volumes provide a way for you to link a part of your host's filesystem to one or many containers. Think of how Microsoft Word runs in its own process. The contents of memory are destroyed when you power off the machine unless you save it to the file system. 
 
 
 # Lab
